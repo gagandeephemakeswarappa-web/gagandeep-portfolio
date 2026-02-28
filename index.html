@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gagandeep Hemakeswarappa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans','Segoe UI',Arial,sans-serif;background:#fff;color:#1a1a1a;line-height:1.7}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:99;background:rgba(255,255,255,0.95);border-bottom:1px solid rgba(14,102,85,0.15);padding:1rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Syne',Georgia,serif;font-weight:700;font-size:1.2rem;color:#0e6655;text-decoration:none;letter-spacing:.05em}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:#5d6d7e;text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:#0e6655}
+.nav-cta{background:#0e6655;color:#fff!important;padding:.4rem 1.2rem;border-radius:5px}
+.nav-cta:hover{background:#148f77!important}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;padding:6rem 3rem 3rem;background:#fff;position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(14,102,85,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(14,102,85,.07) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}
+#hero::after{content:'';position:absolute;right:-50px;bottom:-50px;width:480px;height:480px;background:radial-gradient(circle,rgba(20,143,119,.08) 0%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:740px}
+.badge{display:inline-flex;align-items:center;gap:.5rem;background:#e8f8f5;border:1px solid rgba(14,102,85,.25);color:#0e6655;font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.38rem .95rem;border-radius:100px;margin-bottom:1.8rem}
+.badge-dot{width:7px;height:7px;background:#148f77;border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+h1{font-family:'Syne',Georgia,serif;font-size:clamp(2.6rem,5vw,4.6rem);font-weight:700;line-height:1.05;letter-spacing:-.02em;margin-bottom:.8rem;color:#111}
+h1 span{color:#0e6655}
+.hero-role{font-size:1.05rem;color:#5d6d7e;margin-bottom:1.4rem;font-weight:400}
+.hero-role strong{color:#1a1a1a;font-weight:600}
+.hero-desc{font-size:.98rem;color:#6b7a8d;max-width:540px;line-height:1.85;margin-bottom:2.2rem}
+.actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{padding:.78rem 1.9rem;border-radius:6px;font-size:.88rem;font-weight:600;text-decoration:none;transition:all .2s;display:inline-block}
+.btn-solid{background:#0e6655;color:#fff;box-shadow:0 4px 18px rgba(14,102,85,.25)}
+.btn-solid:hover{background:#148f77;transform:translateY(-2px)}
+.btn-outline{border:1.5px solid rgba(14,102,85,.4);color:#0e6655}
+.btn-outline:hover{background:#e8f8f5;border-color:#0e6655}
+
+/* SECTIONS */
+section{padding:5rem 3rem}
+.eyebrow{font-size:.71rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#148f77;margin-bottom:.5rem;display:flex;align-items:center;gap:.6rem}
+.eyebrow::before{content:'';display:inline-block;width:26px;height:2px;background:#148f77;flex-shrink:0}
+h2{font-family:'Syne',Georgia,serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;margin-bottom:2.5rem;color:#111;line-height:1.15}
+h2 span{color:#0e6655}
+
+/* IMPACT */
+#impact{background:#0e6655;padding:4rem 3rem}
+#impact .eyebrow{color:rgba(255,255,255,.6)}
+#impact .eyebrow::before{background:rgba(255,255,255,.4)}
+#impact h2{color:#fff;margin-bottom:2rem}
+#impact h2 span{color:rgba(255,255,255,.6)}
+.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(255,255,255,.18);border-radius:10px;overflow:hidden;gap:1px;background:rgba(255,255,255,.15)}
+.impact-card{background:rgba(255,255,255,.07);padding:2.2rem 1rem;text-align:center;transition:background .25s}
+.impact-card:hover{background:rgba(255,255,255,.14)}
+.impact-num{font-family:'Syne',Georgia,serif;font-size:2.6rem;font-weight:700;color:#fff;line-height:1;margin-bottom:.4rem}
+.impact-lbl{font-size:.8rem;color:rgba(255,255,255,.65)}
+
+/* ABOUT */
+#about{background:#fff}
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:4.5rem;align-items:start}
+.about-text p{color:#5d6d7e;font-size:.97rem;line-height:1.9;margin-bottom:1rem}
+.about-text p strong{color:#1a1a1a;font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.6rem}
+.tag{background:#e8f8f5;border:1px solid rgba(14,102,85,.2);color:#0e6655;font-size:.76rem;font-weight:500;padding:.3rem .8rem;border-radius:100px}
+.info-table{border-top:1px solid rgba(14,102,85,.12)}
+.info-row{display:flex;justify-content:space-between;align-items:center;padding:.85rem 0;border-bottom:1px solid rgba(14,102,85,.1)}
+.info-lbl{font-size:.73rem;text-transform:uppercase;letter-spacing:.1em;color:#8a9bb0;font-weight:600}
+.info-val{font-size:.87rem;color:#1a1a1a;font-weight:500;text-align:right}
+.info-val.open{color:#0e6655}
+
+/* EXPERIENCE */
+#experience{background:#f4f9f8}
+.timeline{border-left:1.5px solid rgba(14,102,85,.2);padding-left:1.5rem;max-width:800px}
+.tj{position:relative;margin-bottom:2.8rem;padding-left:2rem}
+.dot{position:absolute;left:-2.35rem;top:5px;width:11px;height:11px;background:#fff;border:2px solid #148f77;border-radius:50%}
+.dot.now{background:#0e6655;border-color:#0e6655;box-shadow:0 0 0 4px rgba(14,102,85,.15);animation:ring 2s infinite}
+@keyframes ring{0%,100%{box-shadow:0 0 0 4px rgba(14,102,85,.15)}50%{box-shadow:0 0 0 8px rgba(14,102,85,.05)}}
+.t-date{font-size:.73rem;color:#148f77;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+.t-role{font-family:'Syne',Georgia,serif;font-size:1.08rem;font-weight:700;color:#111;margin-bottom:.12rem}
+.t-co{font-size:.84rem;color:#5d6d7e;margin-bottom:.8rem}
+.t-list{list-style:none;display:flex;flex-direction:column;gap:.38rem}
+.t-list li{font-size:.9rem;color:#5d6d7e;padding-left:1.3rem;position:relative;line-height:1.65}
+.t-list li::before{content:'→';position:absolute;left:0;color:#148f77;font-size:.78rem;top:2px}
+
+/* SKILLS */
+#skills{background:#fff}
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;max-width:840px}
+.sk-card{border:1px solid rgba(14,102,85,.14);border-radius:9px;padding:1.4rem;transition:all .25s}
+.sk-card:hover{border-color:rgba(14,102,85,.38);box-shadow:0 5px 24px rgba(14,102,85,.08);transform:translateY(-3px)}
+.sk-cat{font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#0e6655;margin-bottom:.9rem;padding-bottom:.65rem;border-bottom:1px solid rgba(14,102,85,.12)}
+.sk-tags{display:flex;flex-wrap:wrap;gap:.42rem}
+.sk-tag{background:#f4f9f8;border:1px solid rgba(14,102,85,.1);color:#5d6d7e;font-size:.77rem;padding:.26rem .68rem;border-radius:4px;transition:all .2s}
+.sk-card:hover .sk-tag{background:#e8f8f5;border-color:rgba(14,102,85,.2);color:#0e6655}
+
+/* AWARDS */
+#achievements{background:#f4f9f8}
+.aw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.aw-card{background:#fff;border:1px solid rgba(14,102,85,.13);border-radius:9px;padding:1.5rem;position:relative;overflow:hidden;transition:all .25s}
+.aw-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#0e6655,#148f77);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.aw-card:hover{transform:translateY(-4px);border-color:rgba(14,102,85,.3);box-shadow:0 8px 28px rgba(14,102,85,.09)}
+.aw-card:hover::before{transform:scaleX(1)}
+.aw-yr{font-size:.71rem;font-weight:700;letter-spacing:.12em;color:#d4a017;text-transform:uppercase;margin-bottom:.6rem}
+.aw-title{font-family:'Syne',Georgia,serif;font-size:.96rem;font-weight:700;color:#111;margin-bottom:.28rem}
+.aw-org{font-size:.8rem;color:#5d6d7e}
+
+/* CONTACT */
+#contact{background:#fff;text-align:center}
+.contact-inner{max-width:640px;margin:0 auto}
+.contact-inner .eyebrow{justify-content:center}
+.contact-inner .eyebrow::before{display:none}
+.contact-inner h2{text-align:center}
+.contact-sub{color:#5d6d7e;font-size:.97rem;margin-bottom:2.2rem;line-height:1.8}
+.c-links{display:flex;justify-content:center;gap:.9rem;flex-wrap:wrap;margin-bottom:2.2rem}
+.c-link{display:flex;align-items:center;gap:.5rem;background:#f4f9f8;border:1px solid rgba(14,102,85,.18);color:#1a1a1a;padding:.78rem 1.4rem;border-radius:7px;text-decoration:none;font-size:.87rem;font-weight:500;transition:all .2s}
+.c-link:hover{border-color:#0e6655;color:#0e6655;background:#e8f8f5;transform:translateY(-2px)}
+.c-link svg{width:16px;height:16px;flex-shrink:0}
+.c-email{font-family:'Syne',Georgia,serif;font-size:1.1rem;font-weight:700;color:#0e6655;text-decoration:none;border-bottom:2px solid rgba(14,102,85,.25);padding-bottom:2px}
+.c-email:hover{border-color:#0e6655}
+
+/* FOOTER */
+footer{background:#0e6655;padding:1.6rem 3rem;display:flex;justify-content:space-between;align-items:center;font-size:.79rem;color:rgba(255,255,255,.65)}
+footer strong{color:#fff}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
+.reveal.on{opacity:1;transform:translateY(0)}
+.tj{opacity:0;transform:translateX(-14px);transition:opacity .5s ease,transform .5s ease}
+.tj.on{opacity:1;transform:translateX(0)}
+
+@media(max-width:860px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  section,#impact,#hero{padding:4rem 1.5rem}
+  .about-grid,.impact-grid{grid-template-columns:1fr}
+  .impact-grid{grid-template-columns:repeat(2,1fr)}
+  .skills-grid,.aw-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:.4rem;text-align:center;padding:1.4rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#hero">GH.</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#achievements">Awards</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="hero-inner">
+    <div class="badge"><span class="badge-dot"></span>Open to new opportunities</div>
+    <h1>Gagandeep<br/><span>Hemakeswarappa</span></h1>
+    <p class="hero-role"><strong>Tech-Enabled Business Consultant</strong> &nbsp;·&nbsp; RPA Architect &nbsp;·&nbsp; MBA — GISMA Berlin</p>
+    <p class="hero-desc">I don't just build automation — I find it, justify it, design it, and lead the teams that deliver it. Bridging operations and technology for 6+ years across Fortune 100 clients globally.</p>
+    <div class="actions">
+      <a href="#contact" class="btn btn-solid">Get In Touch</a>
+      <a href="CV_GagandeepHemakeswarappa.pdf" download class="btn btn-outline">Download CV ↓</a>
+    </div>
+  </div>
+</section>
+
+<section id="impact">
+  <div class="eyebrow reveal">Impact at a Glance</div>
+  <h2 class="reveal">Numbers That <span>Matter</span></h2>
+  <div class="impact-grid reveal">
+    <div class="impact-card"><div class="impact-num">$1M+</div><div class="impact-lbl">Business Value Enabled</div></div>
+    <div class="impact-card"><div class="impact-num">30+</div><div class="impact-lbl">FTEs Saved</div></div>
+    <div class="impact-card"><div class="impact-num">10</div><div class="impact-lbl">Team Members Led</div></div>
+    <div class="impact-card"><div class="impact-num">5+</div><div class="impact-lbl">Global Clients</div></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="eyebrow reveal">About Me</div>
+  <h2 class="reveal">Who I <span>Am</span></h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>With <strong>6+ years of experience</strong> spanning RPA architecture, process consulting, and cross-functional team management, I bring a rare combination of technical depth and business acumen that most professionals develop separately over a decade.</p>
+      <p>Holding an <strong>MBA from GISMA Business School, Berlin</strong>, and having worked directly with US-based clients and global Fortune 100 organisations, I operate confidently at every level — from workshop floors with operations teams to boardrooms with CXOs.</p>
+      <p>Currently at <strong>Infosys BPM</strong>, I drive end-to-end automation strategy while simultaneously managing a 10-member RPA and development team. I build business cases, recommend technologies, lead Scrum delivery, and ensure what gets built actually solves the right problem.</p>
+      <div class="tags">
+        <span class="tag">Process Consulting</span><span class="tag">RPA Architecture</span><span class="tag">Agile / Scrum</span><span class="tag">Team Leadership</span><span class="tag">GenAI</span><span class="tag">Stakeholder Management</span><span class="tag">Digital Transformation</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="info-table">
+        <div class="info-row"><span class="info-lbl">Location</span><span class="info-val">Bengaluru, India</span></div>
+        <div class="info-row"><span class="info-lbl">Current Role</span><span class="info-val">Business Consultant @ Infosys BPM</span></div>
+        <div class="info-row"><span class="info-lbl">Education</span><span class="info-val">MBA · GISMA Berlin</span></div>
+        <div class="info-row"><span class="info-lbl">Experience</span><span class="info-val">6+ Years</span></div>
+        <div class="info-row"><span class="info-lbl">Languages</span><span class="info-val">English · Hindi · Kannada · German (A1)</span></div>
+        <div class="info-row"><span class="info-lbl">Status</span><span class="info-val open">Open to Opportunities</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="eyebrow reveal">Career</div>
+  <h2 class="reveal">Work <span>Experience</span></h2>
+  <div class="timeline">
+    <div class="tj">
+      <div class="dot now"></div>
+      <div class="t-date">Nov 2025 — Present</div>
+      <div class="t-role">Tech-Enabled Business Consultant & Production Support Manager</div>
+      <div class="t-co">Infosys BPM Ltd. · Bengaluru</div>
+      <ul class="t-list">
+        <li>Conduct structured interviews and workshops with operations teams to identify automation candidates.</li>
+        <li>Build cost-benefit analyses and business cases to quantify FTE savings and ROI.</li>
+        <li>Produce BRDs, SDDs, process flow maps, and technology recommendation frameworks (RPA, AI/ML, GenAI).</li>
+        <li>Present findings and proposals directly to senior leadership and CXOs for strategic sign-off.</li>
+        <li>Liaise with vendors and third-party tool providers to evaluate and recommend technologies.</li>
+        <li>Simultaneously Support Manager for RPA Production Support + leading development team — 10 members combined.</li>
+        <li>Run Jira-based Scrum ceremonies: sprint planning, backlog grooming, standups, and retrospectives.</li>
+      </ul>
+    </div>
+    <div class="tj">
+      <div class="dot"></div>
+      <div class="t-date">Oct 2022 — Sep 2024</div>
+      <div class="t-role">Senior Associate Consultant — Automation Lead & RPA Architect</div>
+      <div class="t-co">Infosys BPM Ltd. · Bengaluru</div>
+      <ul class="t-list">
+        <li>Saved $600,000 USD (8 FTEs) via Retirement Plan automation; $200,000+ USD (6 FTEs) via Annual Plan Reporting.</li>
+        <li>Led Hyper-automation using UiPath, Python & Power BI — 30% operational improvement across two continents.</li>
+        <li>Managed project timelines and delivery schedules across complex, multi-team automation programmes.</li>
+        <li>Handled client-facing calls and demos for US-based stakeholders, aligning delivery with business expectations.</li>
+        <li>Built executive KPI dashboards; conducted UAT, POC, A/B testing, and compliance reviews.</li>
+        <li>Mentored global team of 10 across time zones within Agile ceremonies.</li>
+      </ul>
+    </div>
+    <div class="tj">
+      <div class="dot"></div>
+      <div class="t-date">Aug 2021 — Oct 2022</div>
+      <div class="t-role">Associate Consultant — Senior RPA Developer</div>
+      <div class="t-co">Infosys BPM Ltd. · Bengaluru</div>
+      <ul class="t-list">
+        <li>Owned automation solutions end-to-end across the SDLC — requirements through post-implementation support.</li>
+        <li>Collaborated with business and IT stakeholders across planning, testing, and feedback cycles.</li>
+      </ul>
+    </div>
+    <div class="tj">
+      <div class="dot"></div>
+      <div class="t-date">Jul 2019 — Aug 2021</div>
+      <div class="t-role">RPA Developer</div>
+      <div class="t-co">Jiffy.ai · Bengaluru</div>
+      <ul class="t-list">
+        <li>Designed AirAsia's first automation use case, enabling a $1M USD engagement and their digital transformation roadmap.</li>
+        <li>Led five go-lives for Fortune 100 clients: KPMG, Lulu Exchange, NLGIC, and Volvo.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="eyebrow reveal">Capabilities</div>
+  <h2 class="reveal">Skills &amp; <span>Tools</span></h2>
+  <div class="skills-grid">
+    <div class="sk-card reveal">
+      <div class="sk-cat">Consulting & Strategy</div>
+      <div class="sk-tags"><span class="sk-tag">Process Discovery</span><span class="sk-tag">BRD / SDD Writing</span><span class="sk-tag">Process Mapping</span><span class="sk-tag">ROI Analysis</span><span class="sk-tag">Business Cases</span><span class="sk-tag">Stakeholder Mgmt</span><span class="sk-tag">Solution Design</span></div>
+    </div>
+    <div class="sk-card reveal">
+      <div class="sk-cat">Automation & RPA</div>
+      <div class="sk-tags"><span class="sk-tag">UiPath</span><span class="sk-tag">Jiffy.ai</span><span class="sk-tag">Hyper-automation</span><span class="sk-tag">Excel VBA</span><span class="sk-tag">OCR</span><span class="sk-tag">RPA Architecture</span></div>
+    </div>
+    <div class="sk-card reveal">
+      <div class="sk-cat">Data & Analytics</div>
+      <div class="sk-tags"><span class="sk-tag">Power BI</span><span class="sk-tag">Tableau</span><span class="sk-tag">SQL</span><span class="sk-tag">Python</span><span class="sk-tag">PySpark</span><span class="sk-tag">Scala</span><span class="sk-tag">Machine Learning</span></div>
+    </div>
+    <div class="sk-card reveal">
+      <div class="sk-cat">AI, Cloud & Project Mgmt</div>
+      <div class="sk-tags"><span class="sk-tag">AWS Bedrock</span><span class="sk-tag">LLMs</span><span class="sk-tag">GenAI Integration</span><span class="sk-tag">Jira</span><span class="sk-tag">Agile / Scrum</span><span class="sk-tag">Notion</span><span class="sk-tag">SDLC</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="eyebrow reveal">Recognition</div>
+  <h2 class="reveal">Awards &amp; <span>Certifications</span></h2>
+  <div class="aw-grid">
+    <div class="aw-card reveal"><div class="aw-yr">2024</div><div class="aw-title">Employee of the Month</div><div class="aw-org">Infosys BPM Ltd.</div></div>
+    <div class="aw-card reveal"><div class="aw-yr">2022</div><div class="aw-title">Gold Recognition — CII</div><div class="aw-org">Confederation of Indian Industry · Infosys BPM</div></div>
+    <div class="aw-card reveal"><div class="aw-yr">2021</div><div class="aw-title">Extra Miler Award</div><div class="aw-org">Infosys BPM Ltd.</div></div>
+    <div class="aw-card reveal"><div class="aw-yr">Certification</div><div class="aw-title">Product Management Simulation</div><div class="aw-org">The Forage · Electronic Arts</div></div>
+    <div class="aw-card reveal"><div class="aw-yr">Certification</div><div class="aw-title">Project Manager Simulation</div><div class="aw-org">The Forage · Siemens Mobility</div></div>
+    <div class="aw-card reveal"><div class="aw-yr">Certification</div><div class="aw-title">Scrum: The Advanced</div><div class="aw-org">LinkedIn Learning</div></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-inner">
+    <div class="eyebrow reveal">Contact</div>
+    <h2 class="reveal">Let's <span>Work Together</span></h2>
+    <p class="contact-sub reveal">Open to consulting roles, product management, and senior BA positions. Based in Bengaluru — open to hybrid and remote opportunities.</p>
+    <div class="c-links reveal">
+      <a href="mailto:gagandeep.hemakeswarappa@gmail.com" class="c-link">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        Email Me
+      </a>
+      <a href="tel:+918147791490" class="c-link">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        +91 8147791490
+      </a>
+      <a href="https://www.linkedin.com/in/gagandeepu/" target="_blank" class="c-link">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="CV_GagandeepHemakeswarappa.pdf" download class="c-link">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        Download CV
+      </a>
+    </div>
+    <a href="mailto:gagandeep.hemakeswarappa@gmail.com" class="c-email reveal">gagandeep.hemakeswarappa@gmail.com</a>
+  </div>
+</section>
+
+<footer>
+  <strong>Gagandeep Hemakeswarappa</strong>
+  <span>Bengaluru, India &nbsp;·&nbsp; Open to Opportunities &nbsp;·&nbsp; © 2026</span>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); obs.unobserve(e.target); } });
+  }, {threshold: 0.1});
+  document.querySelectorAll('.reveal, .tj').forEach((el,i) => {
+    el.style.transitionDelay = (i % 5) * 0.08 + 's';
+    obs.observe(el);
+  });
+  const secs = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    secs.forEach(s => { if(window.scrollY >= s.offsetTop - 120) cur = s.id; });
+    links.forEach(a => { a.style.color = a.getAttribute('href')==='#'+cur ? '#0e6655' : ''; });
+  });
+</script>
+</body>
+</html>
